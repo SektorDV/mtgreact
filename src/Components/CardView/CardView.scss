@@ -1,0 +1,21 @@
+.cardTable {
+    background-color: burlywood;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+}
+
+.cards {
+    margin-top: 50px;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 1px dashed black;
+    width: 147px;
+    height: 205px;
+}
