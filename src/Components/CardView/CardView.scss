@@ -1,21 +1,112 @@
 .cardTable {
-    background-color: burlywood;
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
+  background-color: burlywood;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.leftArrow,
+.rightArrow {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  clip-path: polygon(0 0, 100% 50%, 0 100%, 30% 50%);
+  align-self: center;
+  margin-bottom: 100px;
+}
+
+.leftArrow {
+  transform: rotate(180deg);
+  margin-right: 10px;
+}
+.rightArrow {
+  margin-left: 10px;
 }
 
 .cards {
-    margin-top: 50px;
-    width: 600px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  margin-top: 50px;
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
 }
 
 .card {
-    border: 1px dashed black;
-    width: 147px;
-    height: 205px;
+  border: 1px dashed black;
+  width: 147px;
+  height: 205px;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.curtain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail__container {
+  border: 1px dashed white;
+  display: flex;
+}
+
+.detail__card {
+  width: 223px;
+  height: 310px;
+  border: 1px dashed white;
+}
+
+.detail__text {
+  color: white;
+}
+
+.detail__text__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail__text__header__mana {
+  display: flex;
+}
+
+.mana {
+  margin-top: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-size: cover;
+  display: inline-block;
+  margin-left: 2px;
+}
+
+.colorlessMana {
+  background: #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 10px;
+}
+.greenMana {
+  background-image: url(greenMana.png);
+}
+
+.redMana {
+  background-image: url(redMana.png);
+}
+.whiteMana {
+  background-image: url(whiteMana.png);
+}
+.blueMana {
+  background-image: url(blueMana.png);
+}
+.blackMana {
+  background-image: url(blackMana.png);
 }

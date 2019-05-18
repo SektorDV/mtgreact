@@ -2,20 +2,17 @@ import React, { Component } from "react";
 import "../reset.scss";
 import "./Controls.scss";
 import Filters from './Filters'
-const mtg = require('mtgsdk');
 let cards = [];
 
 
 class Controls extends Component {
   constructor() {
     super();
-    this.inputTimeout = setTimeout(0);
     this.state={
-      cards: [],
-      searchInput: ''
+      searchInput: '',
+      cards: []
     }
   }
-  
 
   inputHandler = (e) => {
     
@@ -26,8 +23,7 @@ class Controls extends Component {
   }
 
   searchHandler = (e) => {
-    mtg.card.all({name: this.state.searchInput, pageSize: 8})
-    .on('data', card => console.log(card))
+
   }
 
 
@@ -38,7 +34,7 @@ class Controls extends Component {
           <h1>MTG Card Search</h1>
 
           <div className="controls__controls">
-              <div class="controls__controls__searchInput">
+              <div className="controls__controls__searchInput">
                 <input onChange={this.inputHandler} value={this.state.searchInput} type="text" placeholder="Enter card name..." />
                 <button onClick={this.searchHandler}>Search</button>
               </div>
