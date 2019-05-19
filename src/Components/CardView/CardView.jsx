@@ -28,6 +28,7 @@ class CardView extends Component {
   };
 
   showCardInfo = card => {
+    if (typeof card == 'undefined') return;
     this.setState({ selected: card, showInfo: true });
   };
 

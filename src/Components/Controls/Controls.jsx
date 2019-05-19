@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../reset.scss";
 import "./Controls.scss";
 import Filters from './Filters'
-let cards = [];
 
 
 class Controls extends Component {
@@ -10,7 +9,8 @@ class Controls extends Component {
     super();
     this.state={
       searchInput: '',
-      cards: []
+      cards: [],
+      filtered: []
     }
   }
 
@@ -23,7 +23,6 @@ class Controls extends Component {
   }
 
   searchHandler = (e) => {
-
   }
 
 
