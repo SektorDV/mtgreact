@@ -1,7 +1,6 @@
 import React from "react";
 import "../reset.scss";
 import "./Controls.scss";
-import Filters from './Filters'
 
 
 const Controls = (props) => {
@@ -15,14 +14,34 @@ const Controls = (props) => {
               <input onChange={props.inputHandler} value={props.searchInput} type="text" placeholder="Enter card name..." />
               {/* <button onClick={this.searchHandler}>Search</button> */}
             </div>
-            <Filters 
-            blueFilter ={props.blueFilter}
-            blackFilter = {props.blackFilter}
-            greenFilter = {props.greenFilter}
-            whiteFilter = {props.whiteFilter}
-            redFilter = {props.redFilter}
-            colorlessFilter = {props.colorlessFilter}
-            />
+            <div className="controls__filters">
+
+        <label>
+        <input type="checkbox"/>
+        <span>Blue</span>
+        </label>
+        <label>
+        <input type="checkbox"/>
+        <span>Red</span>
+        </label>
+        <label>
+        <input type="checkbox"/>
+        <span>White</span>
+        </label>
+        <label>
+        <input type="checkbox"/>
+        <span>Black</span>
+        </label>
+        <label>
+        <input type="checkbox"/>
+        <span>Green</span>
+        </label>
+        <label>
+        <input type="checkbox"/>
+        <span>Colorless</span>
+        </label>
+        
+        </div>
         </div>
       </div>
     </div>

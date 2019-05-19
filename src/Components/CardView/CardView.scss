@@ -69,6 +69,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a0809', end
 .detail__container {
   display: flex;
   margin: auto 10%;
+  max-width: 600px;
 }
 
 .detail__card {

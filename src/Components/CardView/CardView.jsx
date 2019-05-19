@@ -10,12 +10,14 @@ class CardView extends Component {
       page: 0,
       cards: [],
       selected: {},
-      showInfo: false
+      showInfo: false,
+      searchInput: props.searchInput
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ cards: nextProps.cards, page: 0 });
+    if (this.state.searchInput != nextProps.searchInput) this.setState({page: 0})
+    this.setState({ cards: nextProps.cards });
   }
 
   prevPage = () => {

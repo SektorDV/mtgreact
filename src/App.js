@@ -61,6 +61,7 @@ class App extends Component {
               />
               <CardView 
               cards={this.state.filtered}
+              searchInput={this.state.searchInput}
               />
       </div>
     )
