@@ -3,14 +3,7 @@ import './Filters.scss'
 const Filters = () => {
     return (
         <div className="controls__filters">
-        <label>
-        <input type="checkbox"/>
-        <span>All</span>
-        </label>
-        <label>
-        <input type="checkbox"/>
-        <span>Colorless</span>
-        </label>
+
         <label>
         <input type="checkbox"/>
         <span>Blue</span>
@@ -31,7 +24,10 @@ const Filters = () => {
         <input type="checkbox"/>
         <span>Green</span>
         </label>
-      
+        <label>
+        <input type="checkbox"/>
+        <span>Colorless</span>
+        </label>
         
         </div>
     )

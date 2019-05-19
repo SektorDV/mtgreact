@@ -15,7 +15,7 @@ class CardView extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ cards: nextProps.cards });
+    this.setState({ cards: nextProps.cards, page: 0 });
   }
 
   prevPage = () => {
