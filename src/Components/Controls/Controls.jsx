@@ -3,6 +3,8 @@ import "../reset.scss";
 import "./Controls.scss";
 
 
+
+
 const Controls = (props) => {
   return (
     <div className="controls__main">
@@ -12,32 +14,31 @@ const Controls = (props) => {
         <div className="controls__controls">
             <div className="controls__controls__searchInput">
               <input onChange={props.inputHandler} value={props.searchInput} type="text" placeholder="Enter card name..." />
-              {/* <button onClick={this.searchHandler}>Search</button> */}
             </div>
             <div className="controls__filters">
 
         <label>
-        <input type="checkbox"/>
+        <input onChange={(e) => props.filterHandler({blueFilter: e.target.checked})} type="checkbox"/>
         <span>Blue</span>
         </label>
         <label>
-        <input type="checkbox"/>
+        <input onChange={(e) => props.filterHandler({redFilter: e.target.checked})}type="checkbox"/>
         <span>Red</span>
         </label>
         <label>
-        <input type="checkbox"/>
+        <input onChange={(e) => props.filterHandler({whiteFilter: e.target.checked})} type="checkbox"/>
         <span>White</span>
         </label>
         <label>
-        <input type="checkbox"/>
+        <input onChange={(e) => props.filterHandler({blackFilter: e.target.checked})} type="checkbox"/>
         <span>Black</span>
         </label>
         <label>
-        <input type="checkbox"/>
+        <input onChange={(e) => props.filterHandler({greenFilter: e.target.checked})} type="checkbox"/>
         <span>Green</span>
         </label>
         <label>
-        <input type="checkbox"/>
+        <input onChange={(e) => props.filterHandler({colorlessFilter: e.target.checked})} type="checkbox"/>
         <span>Colorless</span>
         </label>
         

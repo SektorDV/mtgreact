@@ -8,6 +8,7 @@ class CardView extends Component {
     super(props);
     this.state = {
       page: 0,
+      filters: props.filters,
       cards: [],
       selected: {},
       showInfo: false,
@@ -16,8 +17,9 @@ class CardView extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.state.searchInput != nextProps.searchInput) this.setState({page: 0})
-    this.setState({ cards: nextProps.cards });
+
+    if ((this.state.searchInput.toLowerCase() != nextProps.searchInput.toLowerCase()) || !(this.state.filters.length === nextProps.filters.length && this.state.filters.every((value, index) => value === nextProps.filters[index]))) this.setState({page: 0})
+    this.setState({ cards: nextProps.cards, filters: nextProps.filters });
   }
 
   prevPage = () => {
