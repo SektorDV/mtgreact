@@ -70,7 +70,6 @@ class App extends Component {
         <Controls
           inputHandler={this.searchInputHandler}
           filterHandler={this.filterHandler}
-          cards={this.state.cards}
           searchInput={this.state.searchInput}
           redFilter={this.state.redFilter}
           blueFilter={this.state.blueFilter}
