@@ -37,10 +37,6 @@ const Controls = (props) => {
         <input onChange={(e) => props.filterHandler({greenFilter: e.target.checked})} type="checkbox"/>
         <span>Green</span>
         </label>
-        <label>
-        <input onChange={(e) => props.filterHandler({colorlessFilter: e.target.checked})} type="checkbox"/>
-        <span>Colorless</span>
-        </label>
         
         </div>
         </div>

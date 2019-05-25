@@ -28,7 +28,7 @@ class DetailView extends Component {
     super(props);
     this.state = {
       show: false,
-      card: {}
+      card: props.card
     };
   }
 

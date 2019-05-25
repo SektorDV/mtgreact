@@ -48,11 +48,40 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a0809', end
 }
 
 .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px dashed black;
   width: 147px;
   height: 205px;
   background-size: cover;
   border-radius: 10px;
+  transform: translatey(0px);
+  animation: float 2s ease-in-out infinite alternate;
+  animation-delay: var(--animDelay);
+  z-index: 1;
+  img { width: 100%; height: auto; }
+}
+
+.card .glow {
+  opacity: 0;
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  background-color: gold;
+  z-index: -1;
+  position: absolute;
+  filter: blur(50px);
+}
+
+.card:hover .glow {
+  opacity: 1;
+  animation: pulse 1s ease-in-out infinite alternate;
+}
+
+.card__wrapper {
+  position: relative;
+  z-index:1;
 }
 
 .curtain {
@@ -63,7 +92,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a0809', end
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 10;
 }
 
 .detail__container {
@@ -154,4 +183,51 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a0809', end
 }
 .blackMana {
   background-image: url(blackMana.png);
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+    width: 139px;
+    height: 195px;
+
+	}
+
+  100% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+    transform: translatey(-5px);
+    width: 147px;
+    height: 205px;
+	}
+}
+
+@keyframes beforeFloat {
+	0% {
+    transform: translatey(0px);
+
+    width: 149px;
+    height: 204px;
+
+	}
+
+  100% {
+    transform: translatey(-2px);
+  
+    width: 157px;
+    height: 215px;
+	}
+}
+
+@keyframes pulse {
+  0% {
+    width: 100px;
+    height: 100px;
+
+  }
+
+  100% {
+    width: 150px;
+    height: 180px;
+  }
 }

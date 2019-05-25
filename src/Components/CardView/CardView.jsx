@@ -6,6 +6,7 @@ import DetailView from "./DetailView";
 class CardView extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       page: 0,
       filters: props.filters,
@@ -51,16 +52,16 @@ class CardView extends Component {
             card={this.state.selected}
           />
         ) : null}
-        {this.state.page > 0 ? (
+        {this.props.prevPage != null ? (
           <div
             className="leftArrow"
             style={this.leftArrowStyle}
-            onClick={this.prevPage}
+            onClick={this.props.prevPage}
           />
         ) : null}
         <div
           className="cards"
-          style={{ marginLeft: this.state.page > 0 ? 0 : 60 }}
+          style={{ marginLeft: this.props.prevPage != null ? 0 : 60 }}
         >
           <Card
             onClick={() => this.showCardInfo(this.state.cards[this.state.page])}
@@ -141,11 +142,14 @@ class CardView extends Component {
             }
           />
         </div>
-        <div
-          className="rightArrow"
-          style={this.leftArrowStyle}
-          onClick={this.nextPage}
-        />
+        {this.props.nextPage != null ? (
+          <div
+            className="rightArrow"
+            style={this.leftArrowStyle}
+            onClick={this.props.nextPage}
+          />
+        ) : null}
+        
       </div>
     );
   }
