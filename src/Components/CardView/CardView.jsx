@@ -18,8 +18,17 @@ class CardView extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-
-    if ((this.state.searchInput.toLowerCase() != nextProps.searchInput.toLowerCase()) || !(this.state.filters.length === nextProps.filters.length && this.state.filters.every((value, index) => value === nextProps.filters[index]))) this.setState({page: 0})
+    if (
+      this.state.searchInput.toLowerCase() !=
+        nextProps.searchInput.toLowerCase() ||
+      !(
+        this.state.filters.length === nextProps.filters.length &&
+        this.state.filters.every(
+          (value, index) => value === nextProps.filters[index]
+        )
+      )
+    )
+      this.setState({ page: 0 });
     this.setState({ cards: nextProps.cards, filters: nextProps.filters });
   }
 
@@ -33,7 +42,7 @@ class CardView extends Component {
   };
 
   showCardInfo = card => {
-    if (typeof card == 'undefined') return;
+    if (typeof card == "undefined") return;
     this.setState({ selected: card, showInfo: true });
   };
 
@@ -42,6 +51,10 @@ class CardView extends Component {
       showInfo: false
     });
   };
+
+  cardHover = () => {
+    console.log('hovered')
+  }
 
   render() {
     return (
@@ -52,104 +65,39 @@ class CardView extends Component {
             card={this.state.selected}
           />
         ) : null}
-        {this.props.prevPage != null ? (
-          <div
-            className="leftArrow"
-            style={this.leftArrowStyle}
-            onClick={this.props.prevPage}
-          />
-        ) : null}
-        <div
-          className="cards"
-          style={{ marginLeft: this.props.prevPage != null ? 0 : 60 }}
-        >
-          <Card
-            onClick={() => this.showCardInfo(this.state.cards[this.state.page])}
-            imageUrl={
-              typeof this.state.cards[this.state.page] == "undefined"
-                ? null
-                : this.state.cards[this.state.page].imageUrl
-            }
-          />
-          <Card
-            onClick={() =>
-              this.showCardInfo(this.state.cards[this.state.page + 1])
-            }
-            imageUrl={
-              typeof this.state.cards[this.state.page + 1] == "undefined"
-                ? null
-                : this.state.cards[this.state.page + 1].imageUrl
-            }
-          />
-          <Card
-            onClick={() =>
-              this.showCardInfo(this.state.cards[this.state.page + 2])
-            }
-            imageUrl={
-              typeof this.state.cards[this.state.page + 2] == "undefined"
-                ? null
-                : this.state.cards[this.state.page + 2].imageUrl
-            }
-          />
-          <Card
-            onClick={() =>
-              this.showCardInfo(this.state.cards[this.state.page + 3])
-            }
-            imageUrl={
-              typeof this.state.cards[this.state.page + 3] == "undefined"
-                ? null
-                : this.state.cards[this.state.page + 3].imageUrl
-            }
-          />
-          <Card
-            onClick={() =>
-              this.showCardInfo(this.state.cards[this.state.page + 4])
-            }
-            imageUrl={
-              typeof this.state.cards[this.state.page + 4] == "undefined"
-                ? null
-                : this.state.cards[this.state.page + 4].imageUrl
-            }
-          />
-          <Card
-            onClick={() =>
-              this.showCardInfo(this.state.cards[this.state.page + 5])
-            }
-            imageUrl={
-              typeof this.state.cards[this.state.page + 5] == "undefined"
-                ? null
-                : this.state.cards[this.state.page + 5].imageUrl
-            }
-          />
-          <Card
-            onClick={() =>
-              this.showCardInfo(this.state.cards[this.state.page + 6])
-            }
-            imageUrl={
-              typeof this.state.cards[this.state.page + 6] == "undefined"
-                ? null
-                : this.state.cards[this.state.page + 6].imageUrl
-            }
-          />
-          <Card
-            onClick={() =>
-              this.showCardInfo(this.state.cards[this.state.page + 7])
-            }
-            imageUrl={
-              typeof this.state.cards[this.state.page + 7] == "undefined"
-                ? null
-                : this.state.cards[this.state.page + 7].imageUrl
-            }
-          />
+        <div className="leftArrow__placeholder">
+          {this.props.prevPage != null ? (
+            <div
+              className="leftArrow"
+              style={this.leftArrowStyle}
+              onClick={this.props.prevPage}
+            />
+          ) : null}
         </div>
-        {this.props.nextPage != null ? (
-          <div
-            className="rightArrow"
-            style={this.leftArrowStyle}
-            onClick={this.props.nextPage}
-          />
-        ) : null}
-        
+        <div className="cards">
+          {[...Array(this.state.cards.length)].map((elem, index) => (
+            <Card
+              key={index}
+              onClick={() =>
+                this.showCardInfo(this.state.cards[this.state.page + index])
+              }
+              imageUrl={
+                typeof this.state.cards[this.state.page + index] == "undefined"
+                  ? null
+                  : this.state.cards[this.state.page + index].imageUrl
+              }
+            />
+          ))}
+        </div>
+        <div className="rightArrow__placeholder">
+          {this.props.nextPage != null ? (
+            <div
+              className="rightArrow"
+              style={this.leftArrowStyle}
+              onClick={this.props.nextPage}
+            />
+          ) : null}
+        </div>
       </div>
     );
   }

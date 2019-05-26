@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import {Spring} from 'react-spring/renderprops';
+import DetailedCard from './DetailedCard'
+
 const stringReplace = require('react-string-replace');
 
 const CardText = (props) => {
@@ -65,34 +68,45 @@ class DetailView extends Component {
   };
 
 
+
   render() {
     return (
       <div className="curtain" onClick={this.props.closeAction}>
         <div className="detail__container">
-          <div
-            className="detail__card"
-            style={{ backgroundImage: `url(${this.state.card.imageUrl})` }}
-          />
-          <div className="detail__text">
-            <h1 className="detail__text__header">
-              {this.state.card.name}{" "}
-              <div className="detail__text__header__mana">
-                {this.parseManaCost(this.state.card.manaCost)}
+          <DetailedCard
+              imageUrl={this.state.card.imageUrl}
+            />
+          <Spring
+            from={{
+              opacity: 0,
+              transform: 'translate(0px, 30px)'
+            }}
+            to={{
+              opacity: 1,
+              transform: 'translate(0px, 0px)'
+            }}
+          >
+            {props => <div style={{...props}} className="detail__text">
+              <h1 className="detail__text__header">
+                {this.state.card.name}{" "}
+                <div className="detail__text__header__mana">
+                  {this.parseManaCost(this.state.card.manaCost)}
+                </div>
+              </h1>
+              <h2>
+                {this.state.card.rarity} {this.state.card.type}
+              </h2>
+              {this.state.card.toughness == null ? null : <p>
+                {this.state.card.power}/{this.state.card.toughness}
+              </p>}
+              <div className="detail__text__text">
+                <CardText text={this.state.card.text} />
               </div>
-            </h1>
-            <h2>
-              {this.state.card.rarity} {this.state.card.type}
-            </h2>
-            {this.state.card.toughness == null ? null : <p>
-              {this.state.card.power}/{this.state.card.toughness}
-            </p>}
-            <div className="detail__text__text">
-              <CardText text={this.state.card.text} />
-            </div>
-            <p className="detail__text__flavorText">
-              {this.state.card.flavor}
-            </p>
-          </div>
+              <p className="detail__text__flavorText">
+                {this.state.card.flavor}
+              </p>
+            </div>}
+          </Spring>
         </div>
       </div>
     );
