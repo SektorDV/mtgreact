@@ -1,10 +1,14 @@
 .cardTable {
+  background: url('./magic.jpg');
+  background-position: center;
+  background-position-y: -15vh;
   background-color: burlywood;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   position: relative;
+  padding-top: 20vh;
 }
 
 .leftArrow,
@@ -85,9 +89,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a0809', end
 }
 
 .curtain {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  margin-top: -20vh;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
