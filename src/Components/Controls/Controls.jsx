@@ -1,7 +1,10 @@
 import React from "react";
 import "../reset.scss";
 import "./Controls.scss";
+import 'pretty-checkbox';
+import { Checkbox } from 'pretty-checkbox-react';
 
+const hopscotch = require('hopscotch');
 
 
 
@@ -13,35 +16,27 @@ const Controls = (props) => {
 
         <div className="controls__controls">
           <div className="controls__controls__searchInput">
-            <input onChange={props.inputHandler} value={props.searchInput} type="text" placeholder="Enter card name..." />
+          <div className="inputWrapper">
+            
+                  <input className="controls__controls__searchInput__input" onChange={props.inputHandler} value={props.searchInput} type="text" placeholder="Enter card name..." />
+                  <span className="input__focusBorder">
+                  <i></i>
+                  </span>
           </div>
-          <div className="controls__filters">
+          </div>
 
-            <label>
-              <input onChange={(e) => props.filterHandler({ blueFilter: e.target.checked })} type="checkbox" />
-              <span>Blue</span>
-            </label>
-            <label>
-              <input onChange={(e) => props.filterHandler({ redFilter: e.target.checked })} type="checkbox" />
-              <span>Red</span>
-            </label>
-            <label>
-              <input onChange={(e) => props.filterHandler({ whiteFilter: e.target.checked })} type="checkbox" />
-              <span>White</span>
-            </label>
-            <label>
-              <input onChange={(e) => props.filterHandler({ blackFilter: e.target.checked })} type="checkbox" />
-              <span>Black</span>
-            </label>
-            <label>
-              <input onChange={(e) => props.filterHandler({ greenFilter: e.target.checked })} type="checkbox" />
-              <span>Green</span>
-            </label>
+          <div className="controls__filters">
+              <Checkbox color="warning" shape="round" animation="smooth" style="thick" onChange={(e) => props.filterHandler({ blueFilter: e.target.checked })} type="checkbox">Blue</Checkbox>
+              <Checkbox color="warning" shape="round" animation="smooth" style="thick" onChange={(e) => props.filterHandler({ redFilter: e.target.checked })} type="checkbox">Red</Checkbox>
+              <Checkbox color="warning" shape="round" animation="smooth" style="thick" onChange={(e) => props.filterHandler({ whiteFilter: e.target.checked })} type="checkbox">White</Checkbox>
+              <Checkbox color="warning" shape="round" animation="smooth" style="thick" onChange={(e) => props.filterHandler({ blackFilter: e.target.checked })} type="checkbox">Black</Checkbox>
+              <Checkbox color="warning" shape="round" animation="smooth" style="thick" onChange={(e) => props.filterHandler({ greenFilter: e.target.checked })} type="checkbox">Green</Checkbox>
 
           </div>
         </div>
       </div>
-      <div className="controls__hide__pip" onClick={() => {
+      <div className="controls__hide__pip" id="controls__hide__pip" onClick={() => {
+        hopscotch.endTour();
         if (document.querySelector('.controls__main').classList.contains("active")) {
           document.querySelector('.controls__main').classList.remove('active')
         } else {

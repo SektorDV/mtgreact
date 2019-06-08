@@ -4,11 +4,14 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.1",
+    "hopscotch": "^0.3.1",
     "mtgsdk": "^0.4.3",
+    "pretty-checkbox": "^3.0.3",
+    "pretty-checkbox-react": "^1.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
-    "react-spring": "^8.0.20",
+    "react-spring": "^8.0.23",
     "react-string-replace": "^0.4.4"
   },
   "scripts": {

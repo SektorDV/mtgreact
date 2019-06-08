@@ -1,3 +1,5 @@
+
+
 html {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -12,17 +14,93 @@ html {
     flex-direction: column;
 
     .controls__controls {
-        margin-top: 5%;
+        margin-top: 1%;
         display: flex;
         justify-content: space-between;
         input {
             height: 30px;
         }
     }
-
+    .inputWrapper {
+        position: relative;
+    }
     .controls__controls__searchInput {
-        display:flex;
-        flex-direction: column;
+        margin: 0 auto;
+    .controls__controls__searchInput__input {
+        color: white;
+        border: 1px solid #ccc; 
+        height: 30px;
+        padding: 7px 14px; 
+        transition: 1s all ease; 
+        background: transparent;
+        position: relative;
+        width: 250px;
+        &:focus, &:not(:placeholder-shown) {
+            border: 1px solid gold;
+            outline-width: 5px;
+            outline-color: rgba(255,215,0,1);
+            background-color: rgba(255,215,0,0.2);
+            //box-shadow: 0 0 5px gold;
+            animation: shadowglow 2s infinite ease-in-out alternate;
+        }
+        & ~ .input__focusBorder:before, & ~ .input__focusBorder:after, & ~ .input__focusBorder i:before, & ~ .input__focusBorder i:after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            background-color: gold;
+        }
+        & ~ .input__focusBorder:before {
+            top: 0;
+            left: 0;
+            width: 0px;
+        }
+
+        & ~ .input__focusBorder:after {
+            bottom: 0;
+            right: 0;
+            width: 0px;
+        }
+
+        &:focus ~ .input__focusBorder:before, &:not(:placeholder-shown) ~ .input__focusBorder:before {
+            width: 250px;
+            transition: 0.5s;
+        }
+
+        &:focus ~ .input__focusBorder:after, &:not(:placeholder-shown) ~ .input__focusBorder:after {
+            width: 250px;
+            transition: 0.5s;
+        }
+
+        & ~ .input__focusBorder i:before {
+            width: 2px;
+            height: 0px;
+            left: 0;
+            top: 0;
+        }
+
+        & ~ .input__focusBorder i:after {
+            width: 2px;
+            height: 0px;
+            right: 0;
+            top: auto;
+            bottom: 0;
+        }
+
+        &:focus ~ .input__focusBorder i:before, &:not(:placeholder-shown) ~ .input__focusBorder i:before {
+            height: 30px;
+            transition: 0.5s;
+        }
+
+        &:focus ~ .input__focusBorder i:after, &:not(:placeholder-shown) ~ .input__focusBorder i:after {
+            height: 30px;
+            transition: 0.5s;
+        }
+
+
+    }
+
+
+
     }
 }
 
@@ -41,6 +119,7 @@ html {
     h1 {
         color: white;
         font-size: 2em;
+        text-align: center;
     }
     &.active {
         transform: translateY(18.5vh);
@@ -53,7 +132,7 @@ html {
     background-color: white;
     position: absolute;
     bottom: 0.5vh;
-    left: 50%;
+    left: calc(50% - 25px);
     width: 50px;
     height: 5px;
     content: '';
@@ -75,8 +154,34 @@ html {
         width: 100px;
         margin-top: -4px;
     }
-
-    
-
 }
 
+
+.pretty {
+    margin-bottom: 5px;
+}
+
+.pretty input:checked ~ div label {
+    color: gold !important;
+    transition: 1.5s;
+}
+
+
+.pretty input:checked ~ div label::before {
+    border-color: gold !important;
+    outline-width: 3px;
+    outline-color: gold;
+    //box-shadow: 0 0 5px gold;
+    animation: shadowglow 2s ease-in-out infinite alternate;
+}
+
+
+
+@keyframes shadowglow {
+    0% {
+        box-shadow: 0 0 5px gold, 0 0 5px gold;
+    }
+    100% {
+        box-shadow: 0 0 5px gold, 0 0 15px gold;
+    }
+}

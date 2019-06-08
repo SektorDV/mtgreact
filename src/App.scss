@@ -4,3 +4,23 @@
     justify-content: center;
     position: relative;
 }
+
+.hopscotch-bubble {
+    background-color: #000 !important;
+    color: white !important;
+    border-radius: 8px !important;
+    border: 3px solid teal !important;
+}
+
+.hopscotch-bubble-arrow-border {
+    border-bottom-color: teal !important;
+    margin-top: 2px !important;
+}
+
+.hopscotch-bubble-number {
+    display: none !important;
+}
+
+.hopscotch-actions {
+    text-align: center !important;
+}

@@ -3,6 +3,8 @@ import "./CardView.scss";
 import Card from "./Card";
 import DetailView from "./DetailView";
 
+
+
 class CardView extends Component {
   constructor(props) {
     super(props);

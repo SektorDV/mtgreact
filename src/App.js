@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import "./App.scss";
 import CardView from "./Components/CardView/CardView";
 import Controls from "./Components/Controls/Controls";
+import '../node_modules/hopscotch/dist/css/hopscotch.min.css'
 
+
+const hopscotch = require('hopscotch');
 const mtg = require("mtgsdk");
 
 class App extends Component {
@@ -146,6 +149,40 @@ class App extends Component {
   componentWillMount() {
     this.getBaseSet();
     this.getNextPageCards();
+  }
+
+  setCookie = (key, value) => {
+    let expiry = new Date();
+    expiry.setTime(expiry.getTime() + (1 * 24 * 60 * 60 * 1000));
+    document.cookie = `${key} = ${value}; path=/;expires=${expiry.toUTCString()}`;
+  }
+
+  getCookie = (key) => {
+    let keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return keyValue ? keyValue[2] : null;
+  }
+
+  intro = {
+    id: "intro",
+    steps: [
+      {
+        title: "Welcome",
+        content: "Click here to open the search menu",
+        target: "controls__hide__pip",
+        placement: "bottom",
+        arrowOffset: "center",
+        xOffset: "center"
+      }
+    ],
+    onEnd: () => this.setCookie('seenIntro', 'seen'),
+    onClose: () => this.setCookie('seenIntro', 'seen')
+  }
+
+  componentDidMount() {
+    if (!this.getCookie('seenIntro')) {
+      hopscotch.startTour(this.intro);
+    }
+    
   }
 
   render() {
