@@ -1,4 +1,20 @@
+@font-face {
+    font-family: 'satansminions';
+    src: url('../../lib/satam___-webfont.woff2') format('woff2'),
+         url('../../lib/satam___-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
+}
+
+@font-face {
+    font-family: 'adequateextra_light';
+    src: url('../../lib/adequate-extralight-webfont.woff2') format('woff2'),
+         url('../../lib/adequate-extralight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 html {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -7,6 +23,42 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.title {
+    user-select: none;
+    line-height: 0.65em;
+    width: 113px;
+    margin: 0 auto;
+    margin-top: 0.4em;
+    position: relative;
+
+    .logo {
+        font-family: 'satansminions';
+        font-weight:  700;
+        display: block;
+        font-size: 1.5em;
+        color: gold;
+        text-shadow: -2px -2px 0 red, 2px -2px 0 red, 2px 2px 0 red, 2px 2px 0 red, -2px 2px 0 red;
+    }
+    .subtitle {
+        font-family: 'adequateextra_light';
+        font-size: 0.3em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    &::after {
+        content: '';
+        height: 1px;
+        background-color: white;
+        width: 111px;
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+    }
+}
+
 
 .controls__container {
     width: 600px;
@@ -27,6 +79,8 @@ html {
     .controls__controls__searchInput {
         margin: 0 auto;
     .controls__controls__searchInput__input {
+        font-family: 'adequateextra_light';
+        font-weight: 700;
         color: white;
         border: 1px solid #ccc; 
         height: 30px;
@@ -113,7 +167,7 @@ html {
     overflow: hidden;
     clip-path: ellipse(90% 100% at 50% 0%);
     position: absolute;
-    top: -18.5vh;
+    top: -18vh;
     z-index: 2;
     transition: transform 1s;
     h1 {
@@ -122,7 +176,7 @@ html {
         text-align: center;
     }
     &.active {
-        transform: translateY(18.5vh);
+        transform: translateY(18vh);
     }
 
     
@@ -146,7 +200,12 @@ html {
     justify-content: space-between;
         flex-wrap: wrap;
     width: 40%;
+    font-family: 'adequateextra_light';
+    font-size: 0.7em;
+    font-weight: 700;
     
+   
+
     label {
         color: white;
         display: flex;

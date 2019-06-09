@@ -69,11 +69,13 @@ class CardView extends Component {
         ) : null}
         <div className="leftArrow__placeholder">
           {this.props.prevPage != null ? (
-            <div
-              className="leftArrow"
-              style={this.leftArrowStyle}
-              onClick={this.props.prevPage}
-            />
+            <div className="arrowWrapper">
+              <div
+                className="leftArrow"
+                style={this.leftArrowStyle}
+                onClick={this.props.prevPage}
+              />
+            </div>
           ) : null}
         </div>
         <div className="cards">

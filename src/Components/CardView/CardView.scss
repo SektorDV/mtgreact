@@ -29,15 +29,13 @@
   align-self: center;
   margin-bottom: 100px;
 background: #0a0809; /* Old browsers */
-  background: -moz-linear-gradient(top, #aebcbf 0%, #6e7774 50%, #0a0e0a 51%, #0a0809 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #aebcbf 0%,#6e7774 50%,#0a0e0a 51%,#0a0809 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #aebcbf 0%,#6e7774 50%,#0a0e0a 51%,#0a0809 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aebcbf', endColorstr='#0a0809',GradientType=0 ); /* IE6-9 */
-  
-
+animation: 2s arrowfloat infinite alternate ease-in-out;
+ 
+background: linear-gradient(to bottom, #ffea32 0%,#ccc100 4%,#ffea30 50%,#897900 53%,#ccc100 100%);
 }
 .leftArrow__placeholder, .rightArrow__placeholder {
   padding-top: 50px;
+
   width: 50px;
   height: 100%;
   display: flex;
@@ -50,14 +48,18 @@ background: #0a0809; /* Old browsers */
   transform: rotate(180deg);
   margin-right: 10px;
 background: #0a0809; /* Old browsers */
-background: -moz-linear-gradient(top, #0a0809 0%, #0a0e0a 49%, #6e7774 50%, #aebcbf 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, #0a0809 0%,#0a0e0a 49%,#6e7774 50%,#aebcbf 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, #0a0809 0%,#0a0e0a 49%,#6e7774 50%,#aebcbf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+background: linear-gradient(to bottom, #ccc100 0%,#897900 47%,#ffea30 50%,#ccc100 96%,#ffea32 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a0809', endColorstr='#aebcbf',GradientType=0 ); /* IE6-9 */
 
 }
 .rightArrow {
   margin-left: 10px;
+
+}
+
+.arrowWrapper {
+  filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
 }
 
 .cards {
@@ -74,7 +76,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a0809', end
 .card {
   justify-content: center;
   align-items: center;
-  border: 1px dashed black;
+  border: 0.5px dashed black;
+  background-image: url('./back.jpg');
   width: 147px;
   height: 205px;
   background-size: cover;
@@ -208,4 +211,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a0809', end
     align-items: center;
   }
   
+}
+
+@keyframes arrowfloat {
+  0% {
+    margin-top: -5px;
+  }
+  100% {
+    margin-top: 5px;
+  }
 }

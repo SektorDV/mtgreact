@@ -12,7 +12,7 @@ const Controls = (props) => {
   return (
     <div className="controls__main">
       <div className="controls__container">
-        <h1>MTG Card Search</h1>
+        <h1 className="title"><span className="logo">MTG</span> <span className="subtitle">Card Search</span></h1>
 
         <div className="controls__controls">
           <div className="controls__controls__searchInput">
