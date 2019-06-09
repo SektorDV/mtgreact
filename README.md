@@ -8,4 +8,4 @@ Install Node.js, clone the project, then run **npm i** from the project director
 
 ## Demo
 
-The demo is available [here] (https://sektordv.github.io/mtgreact)
+The demo is available [here](https://sektordv.github.io/mtgreact).
