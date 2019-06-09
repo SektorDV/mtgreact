@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/mtgreact/static/css/main.dab52bab.chunk.css",
+    "main.js": "/mtgreact/static/js/main.0409f664.chunk.js",
+    "main.js.map": "/mtgreact/static/js/main.0409f664.chunk.js.map",
+    "runtime~main.js": "/mtgreact/static/js/runtime~main.1fa66d4a.js",
+    "runtime~main.js.map": "/mtgreact/static/js/runtime~main.1fa66d4a.js.map",
+    "static/css/2.c4259aea.chunk.css": "/mtgreact/static/css/2.c4259aea.chunk.css",
+    "static/js/2.daf5689e.chunk.js": "/mtgreact/static/js/2.daf5689e.chunk.js",
+    "static/js/2.daf5689e.chunk.js.map": "/mtgreact/static/js/2.daf5689e.chunk.js.map",
+    "index.html": "/mtgreact/index.html",
+    "precache-manifest.1228efa8368d96c3d94c5d2a7a769f72.js": "/mtgreact/precache-manifest.1228efa8368d96c3d94c5d2a7a769f72.js",
+    "service-worker.js": "/mtgreact/service-worker.js",
+    "static/css/2.c4259aea.chunk.css.map": "/mtgreact/static/css/2.c4259aea.chunk.css.map",
+    "static/css/main.dab52bab.chunk.css.map": "/mtgreact/static/css/main.dab52bab.chunk.css.map",
+    "static/media/Controls.scss": "/mtgreact/static/media/satam___-webfont.697c6b06.woff2",
+    "static/media/CardView.scss": "/mtgreact/static/media/magic.5cc73bea.jpg"
+  }
+}
