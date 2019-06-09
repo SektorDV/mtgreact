@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "93304e28a584b243c510187124644846",
+    "revision": "020d6a381bd7621acf2bb6fee856f3a1",
     "url": "/mtgreact/index.html"
   },
   {
